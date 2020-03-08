@@ -249,9 +249,9 @@ $(function() {
 		var th = $(this);
         $.ajax({
 			type: "POST",
-			url: "mail.php", //Change
+			url: "https://formspree.io/xeqkwlje", //Change
 			data: th.serialize()
-		}).done(function() {
+            }).always(function(data) {
             $('.writealine').find('.form').addClass('is-hidden');
             $('.writealine').find('.reply-group').addClass('is-visible');
             setTimeout(function() {
