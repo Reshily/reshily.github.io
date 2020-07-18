@@ -202,7 +202,7 @@ $(function() {
   // --------------------------------------------- //
   // KBW-Countdown Start
   // --------------------------------------------- //
-    $('#countdown').countdown({until: $.countdown.UTCDate(-4, 2020, 9, 24), format: 'D'});
+    $('#countdown').countdown({until: $.countdown.UTCDate(-4, 2021, 3, 24), format: 'D'});
     $('#countdown-large').countdown({until: $.countdown.UTCDate(+10, 2019, 5, 22), format: 'DHMS'});
   // --------------------------------------------- //
   // KBW-Countdown End
