@@ -202,8 +202,8 @@ $(function() {
   // --------------------------------------------- //
   // KBW-Countdown Start
   // --------------------------------------------- //
-    $('#countdown').countdown({until: $.countdown.UTCDate(-4, 2021, 3, 24), format: 'D'});
-    $('#countdown-large').countdown({until: $.countdown.UTCDate(+10, 2019, 5, 22), format: 'DHMS'});
+  $('#countdown').countdown({until: $.countdown.UTCDate(+10, 2019, 5, 22), format: 'D'});
+  $('#countdown-large').countdown({until: $.countdown.UTCDate(+10, 2019, 5, 22), format: 'DHMS'});
   // --------------------------------------------- //
   // KBW-Countdown End
   // --------------------------------------------- //
@@ -244,20 +244,19 @@ $(function() {
   // --------------------------------------------- //
   // Write a Line Form Start
   // --------------------------------------------- //
-  
-    $("#writealine-form").submit(function() { //Change
+  $("#writealine-form").submit(function() { //Change
 		var th = $(this);
-        $.ajax({
+		$.ajax({
 			type: "POST",
-			url: "https://formspree.io/xeqkwlje", //Change
+			url: "mail.php", //Change
 			data: th.serialize()
-            }).always(function(data) {
-            $('.writealine').find('.form').addClass('is-hidden');
-            $('.writealine').find('.reply-group').addClass('is-visible');
-            setTimeout(function() {
+		}).done(function() {
+      $('.writealine').find('.form').addClass('is-hidden');
+      $('.writealine').find('.reply-group').addClass('is-visible');
+			setTimeout(function() {
 				// Done Functions
-                $('.writealine').find('.reply-group').removeClass('is-visible');
-                $('.writealine').find('.form').delay(300).removeClass('is-hidden');
+        $('.writealine').find('.reply-group').removeClass('is-visible');
+        $('.writealine').find('.form').delay(300).removeClass('is-hidden');
 				th.trigger("reset");
 			}, 5000);
 		});
